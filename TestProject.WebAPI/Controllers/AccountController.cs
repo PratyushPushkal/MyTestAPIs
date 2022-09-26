@@ -30,6 +30,10 @@ namespace TestProject.WebAPI.Controllers
       try
       {
         var result = await _accountdata.ListAccount();
+        if (result.Count == 0)
+        {
+          return NoContent();
+        }
         return Ok(result);
       }
       catch

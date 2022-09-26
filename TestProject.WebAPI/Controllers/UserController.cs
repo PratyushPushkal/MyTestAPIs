@@ -29,6 +29,10 @@ namespace TestProject.WebAPI.Controllers
       try
       {
         var result = await _userdata.ListUsers();
+        if (result.Count == 0)
+        {
+          return NoContent();
+        }
         return Ok(result);
       }
       catch
