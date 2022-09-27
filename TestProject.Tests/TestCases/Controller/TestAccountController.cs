@@ -23,7 +23,7 @@ namespace TestProject.Tests.TestCases.Controller
       var mockMapper = new Mock<IMapper>();
       var sut = new AccountController(data.Object, mockMapper.Object);
       //Act
-      var result = await sut.ListAccount();
+      var result = await sut.accounts();
       //Assert
       (result as OkObjectResult).StatusCode.Should().Be(200);
     }
@@ -37,7 +37,7 @@ namespace TestProject.Tests.TestCases.Controller
       var mockMapper = new Mock<IMapper>();
       var sut = new AccountController(data.Object, mockMapper.Object);
       //Act
-      var result = await sut.ListAccount();
+      var result = await sut.accounts();
       //Assert
       (result as NoContentResult).StatusCode.Should().Be(204);
     }

@@ -52,4 +52,26 @@
 	User:
 		* API and Service for UserList done
 		* API and Service for AccountList done
+	Test Cases for what it handle for;
+		* Users_ReturnCollection :  To Check User List
+		* Users_Create : To Create new User
+		* Users_CreateForExistingEmail : To Check,If Email already exist then it will throw error.
+		* Users_CreateSalaryExpensesDiffLessThan1000 :  To Check Salary - Expensesmore than 1000$.
+		* Users_ReturnsSingleUserFound :  To Check, Either User exist or not by its Id.
+		* Users_ReturnsSingleUserNotFound : To Check, If User not present in list.
+		
+		* Accounts_ReturnCollection: To Check Account List
+		* Accounts_Create : To Check Account Creation
+		* Accounts_CreateUserNotAvailableForGivenEmail : To Check,Either User having with Email id in UserList.
+		* Accounts_CreateEmailAlreadyExistWithOtherUser : To Check, If Email provided used by different User in Userlist.
+		* Accounts_DeleteFound : To Check, Deletion of Account if its exist.
+		* Accounts_DeleteNotFound : To Check, Deletion of Accountif its not exist;
+		* Accounts_ReturnSingleAccountFound : To Get Account by its Id, if its found.
+		* Accounts_ReturnSingleAccountNotFound :  To Get Account by its id, if its not found.
+		* Accounts_UpdatePasswordFound: To Check, To Update password if email id found.
+		* Accounts_UpdatePasswordNotFound : To Check, To Update password if email id not found.
+		* Accounts_LoginSuccessful: To Check, If Email and Password match with existing list.
+		* Accounts_LoginUnSuccessful : To Check, If password not matching with existing list for given Email login.
+		* Accounts_LoginWrongEmail : To Check, If Email Id not present in Account List.
+		
 ## Additional Information

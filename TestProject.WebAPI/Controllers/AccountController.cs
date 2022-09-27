@@ -102,12 +102,11 @@ namespace TestProject.WebAPI.Controllers
     }
 
     [HttpDelete]
-    [Route("{accId}")]
-    public async Task<IActionResult> account(int accId)
+    public async Task<IActionResult> accounts([FromBody]Account account)
     {
       try
       {
-        var result = await _accountdata.DeleteAccountById(accId);
+        var result = await _accountdata.DeleteAccountById(account.AccountId);
         return Ok(result);
       }
       catch

@@ -46,6 +46,10 @@ namespace TestProject.WebAPI.Data
       try
       {
         var res = await _context.Accounts.FirstOrDefaultAsync(item => item.Email == account.Email);
+        if(res == null)
+        {
+          throw new RestException(System.Net.HttpStatusCode.NotFound, new { Message = "Account not found." });
+        }
         if (res.isActive)
         {
           string password = Common.GetHashedPassword(account.Password);
@@ -76,12 +80,6 @@ namespace TestProject.WebAPI.Data
     {
       try
       {
-        var existing = await _context.Accounts.FirstOrDefaultAsync(item => item.AccountId == account.AccountId);
-        if (existing != null)
-        {
-          throw new RestException(System.Net.HttpStatusCode.BadRequest, new { Message = "Account already available." });
-        }
-
         var dupUser = await _context.Accounts.FirstOrDefaultAsync(item => item.Email == account.Email && item.AccountId != account.AccountId);
         if (dupUser != null)
         {
@@ -128,7 +126,7 @@ namespace TestProject.WebAPI.Data
         var existing = await _context.Accounts.FirstOrDefaultAsync(item => item.Email == account.Email);
         if (existing == null)
         {
-          throw new RestException(System.Net.HttpStatusCode.BadRequest, new { Message = "No Account details to update." });
+          throw new RestException(System.Net.HttpStatusCode.BadRequest, new { Message = "No Account with given Email present to update." });
         }
         else
         {

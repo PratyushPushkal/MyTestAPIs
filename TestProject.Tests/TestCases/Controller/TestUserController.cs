@@ -23,7 +23,7 @@ namespace TestProject.Tests.TestCases
       var mockMapper = new Mock<IMapper>();
       var sut = new UserController(userData.Object, mockMapper.Object);
       //Act
-      var result = await sut.ListUsers();
+      var result = await sut.users();
       //Assert
       (result as OkObjectResult).StatusCode.Should().Be(200);
     }
@@ -37,7 +37,7 @@ namespace TestProject.Tests.TestCases
       var mockMapper = new Mock<IMapper>();
       var sut = new UserController(userData.Object, mockMapper.Object);
       //Act
-      var result = await sut.ListUsers();
+      var result = await sut.users();
       //Assert
       (result as NoContentResult).StatusCode.Should().Be(204);
     }

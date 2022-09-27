@@ -47,7 +47,10 @@ namespace TestProject.WebAPI.Controllers
       try
       {
         var result = await _userdata.CreateUser(_mapper.Map<User>(_user));
-        return Ok(result);
+        if (result)
+          return Ok(result);
+        else
+          return NoContent();
       }
       catch
       {
