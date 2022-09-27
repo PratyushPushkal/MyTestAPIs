@@ -24,7 +24,7 @@ namespace TestProject.WebAPI.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> ListUsers()
+    public async Task<IActionResult> users()
     {
       try
       {
@@ -42,7 +42,7 @@ namespace TestProject.WebAPI.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateUser([FromBody] UserDto _user)
+    public async Task<IActionResult> users([FromBody] UserDto _user)
     {
       try
       {
@@ -57,7 +57,7 @@ namespace TestProject.WebAPI.Controllers
 
     [HttpGet]
     [Route("{userId}")]
-    public async Task<IActionResult> GetUser(int userId)
+    public async Task<IActionResult> users(int userId)
     {
       try
       {

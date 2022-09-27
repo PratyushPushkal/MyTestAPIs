@@ -25,7 +25,7 @@ namespace TestProject.WebAPI.Controllers
 
     #region Read
     [HttpGet]
-    public async Task<IActionResult> ListAccount()
+    public async Task<IActionResult> accounts()
     {
       try
       {
@@ -44,7 +44,7 @@ namespace TestProject.WebAPI.Controllers
 
     [HttpGet]
     [Route("{accId}")]
-    public async Task<IActionResult> GetAccountById(int accId)
+    public async Task<IActionResult> accounts(int accId)
     {
       try
       {
@@ -74,7 +74,7 @@ namespace TestProject.WebAPI.Controllers
 
     #region CUD
     [HttpPost]
-    public async Task<IActionResult> CreateAccount([FromBody] AccountUpdateDto _account)
+    public async Task<IActionResult> accounts([FromBody] AccountUpdateDto _account)
     {
       try
       {
@@ -88,7 +88,7 @@ namespace TestProject.WebAPI.Controllers
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdatePassword([FromBody] AccountDto _account)
+    public async Task<IActionResult> accounts([FromBody] AccountDto _account)
     {
       try
       {
@@ -103,7 +103,7 @@ namespace TestProject.WebAPI.Controllers
 
     [HttpDelete]
     [Route("{accId}")]
-    public async Task<IActionResult> DeleteAccountById(int accId)
+    public async Task<IActionResult> account(int accId)
     {
       try
       {
