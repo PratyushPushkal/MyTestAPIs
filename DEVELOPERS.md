@@ -27,4 +27,29 @@
 
 ## Deploying
 	* To Deploy, Select Solution and use publish option, which will give multiple option to publish.
+## API and Model
+	Model:
+		User: This model will hold information Like Name,Email,Salary and Expenses
+			* Email will be unique for users
+			* If Salary - Expenses will be more than 1000 then only it will be store in databases.
+		Account: This Model will hold information like Email,Password,IsActive
+			* Password will be store as hash value do hide information.
+			* Email should be available unique and user should be available in User list
+			* IsActive is decide either Account is active or not.
+	API Created:
+	 UserController: 
+		ListUsers: This API will list all users available in system..
+		CreateUser : This API will make able to create new user.
+		GetUser : This API will fetch a Single User from system by its user id.
+	 AccountController:
+		* ListAccount: This API will list all user accounts.
+		* GetAccountById: To Fetch Account information by AccountID, it will fetch Account information of single Account. 
+		* CreateAccount: Once User exist this will enable user to create Account, where inform required like Email and Password
+		* Login: This API will Login user once its A got create.
+		* UpdatePassword: This API will allow user to change password
+		* DeleteAccountById: This API will allow to delete Account
+## Test Case Handled
+	User:
+		* API and Service for UserList done
+		* API and Service for AccountList done
 ## Additional Information
